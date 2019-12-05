@@ -1,0 +1,116 @@
+.navbar {
+  background-color: white;
+  box-shadow: 0px -9px 20px #000000;
+
+  .nav {
+    &-item {
+      padding: 0 0.5 rem;
+    }
+
+    &-link {
+      padding: 1rem;
+      color: #888888;
+    }
+  }
+}
+
+$main-spacing: 20px;
+$main-innerspacing: 7px;
+$bgcolor-one: #ff8c00;
+$bgcolor-two: #a5e786;
+$bgcolor-three: #7aece5;
+$main-txtcolor: #ffffff;
+$main-minheight: 550px;
+$main-minwidth: 100%;
+
+.contacts-layout {
+  display: block;
+  width: $main-minwidth;
+
+  .contacts-header {
+    margin: $main-innerspacing $main-spacing $main-innerspacing $main-spacing;
+    padding: $main-innerspacing;
+    color: $bgcolor-one;
+
+    .button-cancel {
+      width: 60px;
+      height: 25px;
+      padding: 5px;
+      border: 1px solid $bgcolor-one;
+      border-radius: 9px;
+      font-size: 18px;
+      color: $bgcolor-one;
+      text-decoration: none;
+    }
+  }
+
+  .contacts-main {
+    height: $main-minheight;
+    overflow-y: auto;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px #000000;
+    background: $bgcolor-one;
+    background: -webkit-linear-gradient(
+      to left,
+      $bgcolor-three,
+      $bgcolor-two,
+      $bgcolor-one
+    );
+    background: linear-gradient(
+      to left,
+      $bgcolor-three,
+      $bgcolor-two,
+      $bgcolor-one
+    );
+
+    .render-list {
+      margin: $main-spacing;
+      .main-list {
+        display: inline;
+        list-style: none;
+
+        .item-list {
+          width: 100%;
+          background-color: rgba($color: #c5c5c5, $alpha: 0.4);
+          border-radius: 7px;
+          box-shadow: 0px 0px 2px #c5c5c5;
+          color: #ffffff;
+
+          @mixin image-style {
+            position: relative;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+          }
+
+          .item {
+            margin: -7px 0 -7px 0;
+
+            .image-item {
+              margin: $main-innerspacing;
+              float: left;
+              img {
+                @include image-style();
+              }
+            }
+
+            .detail-item {
+              min-width: 180px;
+              display: inline-block;
+              padding: $main-innerspacing;
+
+              span {
+                font-size: 18px;
+              }
+            }
+
+            .info-item {
+              margin-left: 20px;
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
